@@ -1,0 +1,61 @@
+version: '3'
+
+x-php-build-args: &php-build-args
+  PHP_EXTENSIONS: 'intl gd pdo_pgsql apcu xdebug'
+
+services:
+  php:
+    image: php-dev:latest
+    build:
+      args: *php-build-args
+    volumes:
+      - $PWD:/var/www/html:rw,cached
+    environment:
+      APP_ENV: dev
+      APP_DEBUG: 1
+      TEMPLATE_PHP_INI: development
+      PHP_INI_OPCACHE__VALIDATE_TIMESTAMPS: 1
+      APACHE_RUN_USER: docker
+      APACHE_RUN_GROUP: docker
+      PHP_INI_OPCACHE__PRELOAD: ""
+
+  database:
+    ports:
+      - protocol: tcp
+        target: 5432
+        published: 5432
+
+  hasura:
+    environment:
+      HASURA_GRAPHQL_ENABLED_APIS: 'metadata,graphql,pgdump,config'
+      HASURA_GRAPHQL_LOG_LEVEL: 'debug'
+      HASURA_GRAPHQL_DEV_MODE: 'true'
+      HASURA_GRAPHQL_ENABLE_CONSOLE: 'true'
+      HASURA_GRAPHQL_ADMIN_INTERNAL_ERRORS: 'true'
+
+  setup:
+    build:
+      dockerfile: ./docker/php/Dockerfile
+      context: .
+      args: *php-build-args
+    command:
+      - /bin/bash
+      - /etc/container/setup.sh
+    volumes:
+      - $PWD:/var/www/html:rw,cached
+      # By default var dir will be chosen automatically, usually under /var/lib/docker/volumes/
+      # Add if you need it.
+      #- $PWD/var:/var/www/html/var:rw,cached
+      - $PWD/docker/php/etc/container/setup.sh:/etc/container/setup.sh:ro
+    depends_on:
+      - php
+      - hasura
+      - database
+    environment:
+      APP_ENV: dev
+      APP_DEBUG: 1
+      TEMPLATE_PHP_INI: development
+      PHP_INI_OPCACHE__VALIDATE_TIMESTAMPS: 1
+      APACHE_RUN_USER: docker
+      APACHE_RUN_GROUP: docker
+      PHP_INI_OPCACHE__PRELOAD: ""

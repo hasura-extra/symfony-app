@@ -1,0 +1,13 @@
+hasura:
+  base_uri: '%env(HASURA_BASE_URI)%'
+  admin_secret: '%env(HASURA_ADMIN_SECRET)%'
+  auth:
+    default_role: ROLE_USER
+    anonymous_role: ROLE_ANONYMOUS
+  metadata:
+    path: '%kernel.project_dir%/hasura/metadata'
+  sailor:
+    executor_namespace: App\GraphQLExecutor
+    executor_path: '%kernel.project_dir%/src/GraphQLExecutor'
+    query_spec_path: '%kernel.project_dir%/hasura/graphql'
+    schema_path: '%kernel.project_dir%/hasura/schema.graphql'

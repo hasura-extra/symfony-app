@@ -1,0 +1,48 @@
+security:
+    enable_authenticator_manager: true
+    # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
+    password_hashers:
+        Symfony\Component\Security\Core\User\InMemoryUser: 'plaintext'
+        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
+    # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
+    providers:
+        user:
+            entity:
+                class: App\Entity\User
+                property: email
+        hasura:
+            memory:
+                users:
+                    hasura: { password: '%env(APP_HASURA_BASIC_AUTH)%' }
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        table_event:
+            pattern: ^/hasura_table_event$
+            stateless: true
+            provider: hasura
+            http_basic:
+                realm: Hasura Area
+        main:
+            stateless: true
+            provider: user
+            # https://github.com/lexik/LexikJWTAuthenticationBundle/blob/2.x/Resources/doc/index.md#configuration
+            jwt: ~
+            json_login:
+                check_path: /login
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+            entry_point: jwt
+
+
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#the-firewall
+
+            # https://symfony.com/doc/current/security/impersonating_user.html
+            # switch_user: true
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+         - { path: ^/hasura_table_event$, roles: IS_AUTHENTICATED_FULLY }

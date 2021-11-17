@@ -1,0 +1,1 @@
+objects: !include custom_types/objects.yaml
