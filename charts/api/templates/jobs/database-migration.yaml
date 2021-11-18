@@ -1,0 +1,35 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "api.name" . }}-jobs-database-migration
+  labels:
+  {{- include "api.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": "pre-upgrade,post-install"
+    "helm.sh/hook-delete-policy": "before-hook-creation"
+    "helm.sh/hook-weight": "1"
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+      {{- include "api.labels" . | nindent 8 }}
+    spec:
+      serviceAccountName: {{ include "api.apache.serviceAccountName" . }}
+      restartPolicy: Never
+      containers:
+        - name: job
+          image: "{{ .Values.apache.image.repository }}:{{ .Values.apache.image.tag }}"
+          imagePullPolicy: {{ .Values.apache.image.pullPolicy }}
+          args:
+            - "php"
+            - "bin/console"
+            - "doctrine:migrations:migrate"
+            - "latest"
+            - "--no-interaction"
+            - "--allow-no-migration"
+          envFrom:
+            - configMapRef:
+                name: {{ include "api.name" . }}-php
+            - secretRef:
+                name: {{ include "api.name" . }}-php

@@ -1,0 +1,79 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "api.name" . }}-apache
+  labels:
+    {{- include "api.labels" . | nindent 4 }}
+    component: apache
+spec:
+  {{- if not .Values.apache.autoscaling.enabled }}
+  replicas: {{ .Values.apache.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "api.selectorLabels" . | nindent 6 }}
+      component: apache
+  template:
+    metadata:
+      {{- with .Values.apache.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "api.selectorLabels" . | nindent 8 }}
+        component: apache
+    spec:
+      {{- with .Values.apache.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "api.apache.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.apache.podSecurityContext | nindent 8 }}
+      containers:
+        - name: apache
+          securityContext:
+            {{- toYaml .Values.apache.securityContext | nindent 12 }}
+          image: "{{ .Values.apache.image.repository }}:{{ .Values.apache.image.tag }}"
+          imagePullPolicy: {{ .Values.apache.image.pullPolicy }}
+          envFrom:
+            - configMapRef:
+                name: {{ include "api.name" . }}-php
+            - secretRef:
+                name: {{ include "api.name" . }}-php
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              httpHeaders:
+                - name: Host
+                  value: {{ tpl .Values.apache.healthcheck.hostname $ | quote }}
+              path: {{ .Values.apache.healthcheck.path | quote }}
+              port: http
+            timeoutSeconds: 3
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              httpHeaders:
+                - name: Host
+                  value: {{ tpl .Values.apache.healthcheck.hostname $ | quote }}
+              path: {{ .Values.apache.healthcheck.path | quote }}
+              port: http
+            timeoutSeconds: 3
+            periodSeconds: 10
+          resources:
+            {{- toYaml .Values.apache.resources | nindent 12 }}
+      {{- with .Values.apache.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.apache.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.apache.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

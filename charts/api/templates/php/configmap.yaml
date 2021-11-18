@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "api.name" . }}-php
+  labels:
+  {{- include "api.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": "pre-install,pre-upgrade"
+    "helm.sh/hook-delete-policy": "before-hook-creation"
+    "helm.sh/hook-weight": "0"
+data:
+  APP_ENV: {{ .Values.apache.appEnv | quote }}
+  APP_DEBUG: {{ .Values.apache.appDebug | quote }}
+  TRUSTED_HOSTS: {{ tpl .Values.apache.trustedHosts $ | quote }}
+  TRUSTED_PROXIES: {{ .Values.apache.trustedProxies | quote }}
+  HASURA_BASE_URI: "http://{{ .Values.hasura.fullnameOverride }}.{{ .Release.Namespace }}.svc.cluster.local"
