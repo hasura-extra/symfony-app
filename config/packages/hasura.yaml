@@ -7,9 +7,9 @@ hasura:
   remote_schema_name: local
   auth:
     # Default role for authenticated user when user not request role via `x-hasura-role` header.
-    default_role: ROLE_USER
+    default_role: !php/const App\Security\SystemRoles::ROLE_USER
     # Role for unauthenticated user.
-    anonymous_role: ROLE_ANONYMOUS
+    anonymous_role: !php/const App\Security\SystemRoles::ROLE_ANONYMOUS
   metadata:
     # Path store your Hasura metadata.
     path: '%kernel.project_dir%/hasura/metadata'

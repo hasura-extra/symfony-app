@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace App\GraphQL\User\RegistrationMutation;
 
 use App\Entity\User;
+use App\Security\SystemRoles;
 use Hasura\Bundle\GraphQLite\Attribute\ObjectAssertion;
 use Hasura\Bundle\GraphQLite\Attribute\Transactional;
 use Hasura\GraphQLiteBridge\Attribute\ArgNaming;
+use Hasura\GraphQLiteBridge\Attribute\Roles;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use TheCodingMachine\GraphQLite\Annotations as GQL;
 
@@ -18,6 +20,7 @@ final class Resolver
     }
 
     #[GQL\Mutation(name: 'user_registration', outputType: 'user_registration_mutation_output!')]
+    #[Roles(SystemRoles::ROLE_ANONYMOUS)]
     #[ArgNaming(for: 'inputObj', name: 'input_obj')]
     #[ObjectAssertion(for: 'inputObj')]
     #[Transactional]

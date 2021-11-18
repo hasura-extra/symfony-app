@@ -1,0 +1,20 @@
+role: ROLE_ANONYMOUS
+definition:
+    schema: |-
+        schema  { query: Query mutation: Mutation }
+
+        type Mutation { user_registration(input_obj: user_registration_mutation_input!): user_registration_mutation_output!
+        }
+
+        type Query { _dummy: String!
+        }
+
+        type user_registration_mutation_output { id: ID!
+          roles: [String!]!
+          userName: String!
+        }
+
+        input user_registration_mutation_input {email: String!
+          name: String!
+          password: String!
+        }
