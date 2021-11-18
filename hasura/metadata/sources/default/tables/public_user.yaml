@@ -1,6 +1,17 @@
 table:
     schema: public
     name: user
+select_permissions:
+    -
+        role: ROLE_USER
+        permission:
+            columns:
+                - email
+                - id
+                - name
+            filter:
+                id:
+                    _eq: X-Hasura-User-Id
 event_triggers:
     -
         name: user_registered

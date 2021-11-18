@@ -22,3 +22,6 @@ definition:
     type: mutation
     kind: synchronous
 comment: login
+permissions:
+    -
+        role: ROLE_ANONYMOUS
