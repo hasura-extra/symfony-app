@@ -11,10 +11,11 @@ use Symfony\Component\Routing\Annotation\Route;
 /*
  * Health check support for Docker & Kubernetes liveness probe, readiness probe.
  */
+
 final class Healthz
 {
     #[Route(path: '/healthz')]
-    public function __invoke()
+    public function __invoke(): Response
     {
         return new Response('OK', 200);
     }
