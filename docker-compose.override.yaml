@@ -48,9 +48,9 @@ services:
       #- $PWD/var:/var/www/html/var:rw,cached
       - $PWD/docker/php/etc/container/setup.sh:/etc/container/setup.sh:ro
     depends_on:
+      - database
       - php
       - hasura
-      - database
     environment:
       APP_ENV: dev
       APP_DEBUG: 1
@@ -59,3 +59,10 @@ services:
       APACHE_RUN_USER: docker
       APACHE_RUN_GROUP: docker
       PHP_INI_OPCACHE__PRELOAD: ""
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - protocol: tcp
+        target: 8025
+        published: 8025

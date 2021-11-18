@@ -1,13 +1,24 @@
 hasura:
+  # Hasura base uri
   base_uri: '%env(HASURA_BASE_URI)%'
+  # Hasura admin secret
   admin_secret: '%env(HASURA_ADMIN_SECRET)%'
+  # Application remote schema name had added on Hasura.
+  remote_schema_name: local
   auth:
+    # Default role for authenticated user when user not request role via `x-hasura-role` header.
     default_role: ROLE_USER
+    # Role for unauthenticated user.
     anonymous_role: ROLE_ANONYMOUS
   metadata:
+    # Path store your Hasura metadata.
     path: '%kernel.project_dir%/hasura/metadata'
   sailor:
+    # Namespace of executor classes generated.
     executor_namespace: App\GraphQLExecutor
+    # Path store executor classes generated.
     executor_path: '%kernel.project_dir%/src/GraphQLExecutor'
+    # Path store your GraphQL query spec.
     query_spec_path: '%kernel.project_dir%/hasura/graphql'
+    # Path store Hasura SDL when run `hasura:sailor:introspect` command.
     schema_path: '%kernel.project_dir%/hasura/schema.graphql'

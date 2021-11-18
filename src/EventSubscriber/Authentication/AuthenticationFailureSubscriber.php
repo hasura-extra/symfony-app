@@ -8,10 +8,11 @@
 
 declare(strict_types=1);
 
-namespace App\EventSubscriber;
+namespace App\EventSubscriber\Authentication;
 
 use Lexik\Bundle\JWTAuthenticationBundle\Event\AuthenticationFailureEvent;
 use Lexik\Bundle\JWTAuthenticationBundle\Events;
+use Lexik\Bundle\JWTAuthenticationBundle\Response\JWTAuthenticationFailureResponse;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
@@ -26,17 +27,22 @@ final class AuthenticationFailureSubscriber implements EventSubscriberInterface
 
     public function onAuthenticationFailure(AuthenticationFailureEvent $event): void
     {
-        // Set response compatible with Hasura action.
-        $event->setResponse(
-            new JsonResponse(
-                [
-                    'extensions' => [
-                        'category' => 'security'
+        $response = $event->getResponse();
+
+        if ($response instanceof JWTAuthenticationFailureResponse) {
+            // Set response compatible with Hasura action.
+            // https://hasura.io/docs/latest/graphql/core/actions/action-handlers.html#returning-an-error-response
+            $event->setResponse(
+                new JsonResponse(
+                    [
+                        'extensions' => [
+                            'category' => 'security'
+                        ],
+                        'message' => $response->getMessage()
                     ],
-                    'message' => 'Invalid credentials.'
-                ],
-                401
-            )
-        );
+                    401
+                )
+            );
+        }
     }
 }

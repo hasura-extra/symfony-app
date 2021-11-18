@@ -1,4 +1,11 @@
 -
+    name: countries
+    definition:
+        url: 'https://countries.trevorblades.com/'
+        timeout_seconds: 60
+    comment: ''
+    permissions: !include remote_schemas/countries/permissions.yaml
+-
     name: local
     definition:
         url: '{{APP_BASE_URI}}/graphql'
