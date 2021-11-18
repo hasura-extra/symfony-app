@@ -4,8 +4,8 @@ x-php-build-args: &php-build-args
   PHP_EXTENSIONS: 'intl gd pdo_pgsql apcu xdebug'
 
 services:
-  php:
-    image: php-dev:latest
+  apache:
+    image: apache-dev:latest
     build:
       args: *php-build-args
     volumes:
@@ -19,7 +19,7 @@ services:
       APACHE_RUN_GROUP: docker
       PHP_INI_OPCACHE__PRELOAD: ""
 
-  database:
+  postgres:
     ports:
       - protocol: tcp
         target: 5432
@@ -35,7 +35,7 @@ services:
 
   setup:
     build:
-      dockerfile: ./docker/php/Dockerfile
+      dockerfile: ./docker/apache/Dockerfile
       context: .
       args: *php-build-args
     command:
@@ -46,10 +46,10 @@ services:
       # By default var dir will be chosen automatically, usually under /var/lib/docker/volumes/
       # Add if you need it.
       #- $PWD/var:/var/www/html/var:rw,cached
-      - $PWD/docker/php/etc/container/setup.sh:/etc/container/setup.sh:ro
+      - $PWD/docker/apache/etc/container/setup.sh:/etc/container/setup.sh:ro
     depends_on:
-      - database
-      - php
+      - postgres
+      - apache
       - hasura
     environment:
       APP_ENV: dev

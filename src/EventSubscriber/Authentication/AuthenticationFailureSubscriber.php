@@ -34,7 +34,7 @@ final class AuthenticationFailureSubscriber implements EventSubscriberInterface
                         ],
                         'message' => $response->getMessage()
                     ],
-                    401
+                    $response->getStatusCode()
                 )
             );
         }

@@ -6,7 +6,7 @@ set -e
 composer install --prefer-dist --no-progress --no-interaction
 
 echo "Generating jwt key pair..."
-bin/console lexik:jwt:generate-keypair --skip-if-exists
+php bin/console lexik:jwt:generate-keypair --skip-if-exists
 
 echo "Waiting for database to be ready..."
 

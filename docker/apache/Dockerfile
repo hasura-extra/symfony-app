@@ -54,9 +54,11 @@ RUN set -eux; \
 VOLUME /var/www/html/var
 
 # Apache conf: https://github.com/symfony/recipes-contrib/blob/master/symfony/apache-pack/1.0/public/.htaccess
-COPY ./docker/php/etc/apache2/conf-available/docker-php.conf /etc/apache2/conf-available/docker-php.conf
+COPY docker/apache/etc/apache2/conf-available/docker-php.conf /etc/apache2/conf-available/docker-php.conf
 
 # https://github.com/thecodingmachine/docker-images-php#launching-commands-on-container-startup
-COPY ./docker/php/etc/container/startup.sh /etc/container/startup.sh
+COPY docker/apache/etc/container/startup.sh /etc/container/startup.sh
 
 RUN sudo chmod +x /etc/container/startup.sh; sync
+
+HEALTHCHECK --interval=10s --timeout=3s --retries=3 CMD ["curl", "-sSf", "http://localhost/healthz"]

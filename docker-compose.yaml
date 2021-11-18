@@ -1,25 +1,26 @@
 version: '3'
 
 services:
-  php:
-    image: php-prod:latest
+  apache:
+    image: apache-prod:latest
     build:
-      dockerfile: ./docker/php/Dockerfile
+      dockerfile: ./docker/apache/Dockerfile
       context: .
       args:
         PHP_VERSION: ${PHP_VERSION:-8.0}
         PHP_EXTENSIONS: 'intl gd pdo_pgsql apcu'
     depends_on:
-      - database
+      - postgres
     ports:
       - protocol: tcp
         target: 80
         published: 80
 
-  database:
+  postgres:
     image: postgres:${POSTGRES_VERSION:-13}-alpine
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-app}
+      POSTGRES_USERNAME: ${POSTGRES_USERNAME:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-!ChangeMe!}
     volumes:
       - db-data:/var/lib/postgresql/data:rw,cached
@@ -28,22 +29,22 @@ services:
     image: hasura/graphql-engine:${HASURA_VERSION:-v2.1.0-beta.2}
     restart: on-failure
     environment:
-      APP_BASE_URI: 'http://php'
+      APP_BASE_URI: 'http://apache'
       # application basic auth for Hasura identify itself. (will be use in table event & actions) see .env
       # base64_encode('hasura:!ChangeMe!');
       APP_HASURA_BASIC_AUTH: 'Basic aGFzdXJhOiFDaGFuZ2VNZSE='
       # https://hasura.io/docs/latest/graphql/core/deployment/graphql-engine-flags/reference.html
       HASURA_GRAPHQL_ADMIN_SECRET: '1234'
-      HASURA_GRAPHQL_AUTH_HOOK: http://php/hasura_auth_hook
-      HASURA_GRAPHQL_DATABASE_URL: postgresql://postgres:!ChangeMe!@database/app
+      HASURA_GRAPHQL_AUTH_HOOK: 'http://apache/hasura_auth_hook'
+      HASURA_GRAPHQL_DATABASE_URL: postgresql://postgres:!ChangeMe!@postgres/app
       HASURA_GRAPHQL_EXPERIMENTAL_FEATURES: 'inherited_roles'
       HASURA_GRAPHQL_ENABLE_REMOTE_SCHEMA_PERMISSIONS: 'true'
       HASURA_GRAPHQL_ENABLE_CONSOLE: 'false'
       HASURA_GRAPHQL_LOG_LEVEL: 'warn'
       HASURA_GRAPHQL_ENABLED_APIS: 'metadata, graphql'
     depends_on:
-      - php
-      - database
+      - apache
+      - postgres
     ports:
       - protocol: tcp
         target: 8080
