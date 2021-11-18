@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ include "api.name" . }}-apply-hasura-metadata
+  name: {{ include "api.name" . }}-jobs-apply-hasura-metadata
   labels:
   {{- include "api.labels" . | nindent 4 }}
   annotations:
