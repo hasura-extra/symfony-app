@@ -5,7 +5,7 @@ This is an application template (boilerplate) can be used to kickstart a web API
 
 The application template provides the following features right out of the box:
 
-+ An alternative console commands (you don't need to install Hasura CLI) to manage Hasura [metadata](https://hasura.io/docs/latest/graphql/core/event-triggers/index.html).
++ An alternative console commands (you don't need to install Hasura CLI) to manage Hasura [metadata](https://hasura.io/docs/latest/graphql/core/migrations/manage-metadata.html).
 + Handle Hasura [events triggered](https://hasura.io/docs/latest/graphql/core/event-triggers/index.html).
 + GraphQL server to build [remote schema](https://hasura.io/docs/latest/graphql/core/remote-schemas/index.html) handle business logic.
 + GraphQL client code generator support generate code base on your GraphQL query spec.
