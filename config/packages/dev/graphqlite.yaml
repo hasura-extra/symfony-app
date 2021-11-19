@@ -1,4 +1,3 @@
-# Read more about GraphQLite available options at: https://graphqlite.thecodingmachine.io/docs/symfony-bundle
 graphqlite:
   debug:
     INCLUDE_DEBUG_MESSAGE: true

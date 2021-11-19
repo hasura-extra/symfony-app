@@ -11,7 +11,6 @@ use Symfony\Component\Routing\Annotation\Route;
 /*
  * Health check support for Docker & Kubernetes liveness probe, readiness probe.
  */
-
 final class Healthz
 {
     #[Route(path: '/healthz')]
