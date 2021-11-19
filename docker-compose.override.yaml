@@ -5,11 +5,14 @@ x-php-build-args: &php-build-args
 
 services:
   apache:
-    image: apache-dev:latest
+    image: localhost:5000/apache-dev:latest
     build:
       args: *php-build-args
     volumes:
       - $PWD:/var/www/html:rw,cached
+      # By default var dir will be chosen automatically, usually under /var/lib/docker/volumes/
+      # Add if you need it.
+      #- $PWD/var:/var/www/html/var:rw,cached
     environment:
       APP_ENV: dev
       APP_DEBUG: 1
@@ -43,9 +46,6 @@ services:
       - /etc/container/setup.sh
     volumes:
       - $PWD:/var/www/html:rw,cached
-      # By default var dir will be chosen automatically, usually under /var/lib/docker/volumes/
-      # Add if you need it.
-      #- $PWD/var:/var/www/html/var:rw,cached
       - $PWD/docker/apache/etc/container/setup.sh:/etc/container/setup.sh:ro
     depends_on:
       - postgres

@@ -10,7 +10,7 @@ apache:
   trustedHosts: '^(localhost|{{ include "api.name" . }}-apache\.{{ .Release.Namespace }}\.svc\.cluster\.local)$'
   trustedProxies: '127.0.0.1'
   image:
-    repository: php-prod
+    repository: localhost:5000/apache-prod
     pullPolicy: IfNotPresent
     tag: latest
   healthcheck:

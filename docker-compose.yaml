@@ -2,13 +2,12 @@ version: '3'
 
 services:
   apache:
-    image: apache-prod:latest
+    image: localhost:5000/apache-prod:latest
     build:
       dockerfile: ./docker/apache/Dockerfile
       context: .
       args:
         PHP_VERSION: ${PHP_VERSION:-8.0}
-        PHP_EXTENSIONS: 'intl gd pdo_pgsql apcu'
     depends_on:
       - postgres
     ports:
