@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d9002bda438bf04a6715a1a7e5102928",
+    "content-hash": "549e3c91d4a9ca41a0ed6bedeb8660fc",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -1593,17 +1593,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hasura-extra/api-client.git",
-                "reference": "1fd8de22cd8493a41604397761cdf6d6d3844379"
+                "reference": "9c49f2dbab3efe10190261a6738d2674ea221009"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hasura-extra/api-client/zipball/1fd8de22cd8493a41604397761cdf6d6d3844379",
-                "reference": "1fd8de22cd8493a41604397761cdf6d6d3844379",
+                "url": "https://api.github.com/repos/hasura-extra/api-client/zipball/9c49f2dbab3efe10190261a6738d2674ea221009",
+                "reference": "9c49f2dbab3efe10190261a6738d2674ea221009",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.0",
                 "symfony/http-client": "^5.0"
+            },
+            "conflict": {
+                "hasura-extra/hasura-bundle": "*"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.5"
@@ -1623,7 +1626,7 @@
             "support": {
                 "source": "https://github.com/hasura-extra/api-client/tree/main"
             },
-            "time": "2021-11-15T02:22:24+00:00"
+            "time": "2021-11-19T18:00:00+00:00"
         },
         {
             "name": "hasura-extra/auth-hook",
@@ -1631,12 +1634,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hasura-extra/auth-hook.git",
-                "reference": "f4063f36534f4a8cd37c3bbad82f624ee1bec1e2"
+                "reference": "b105094d37ed9be6f84ca8745373e1d0c141ab5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hasura-extra/auth-hook/zipball/f4063f36534f4a8cd37c3bbad82f624ee1bec1e2",
-                "reference": "f4063f36534f4a8cd37c3bbad82f624ee1bec1e2",
+                "url": "https://api.github.com/repos/hasura-extra/auth-hook/zipball/b105094d37ed9be6f84ca8745373e1d0c141ab5e",
+                "reference": "b105094d37ed9be6f84ca8745373e1d0c141ab5e",
                 "shasum": ""
             },
             "require": {
@@ -1664,7 +1667,7 @@
                 "issues": "https://github.com/hasura-extra/auth-hook/issues",
                 "source": "https://github.com/hasura-extra/auth-hook/tree/main"
             },
-            "time": "2021-11-16T06:29:38+00:00"
+            "time": "2021-11-19T18:00:06+00:00"
         },
         {
             "name": "hasura-extra/bundle",
@@ -1672,12 +1675,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hasura-extra/bundle.git",
-                "reference": "1222f82fcfdd9d8b3c60f8ec3ba68f4e22d6e890"
+                "reference": "4aea67287f27d19d296420d6dfc8d812f1a0bbe5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hasura-extra/bundle/zipball/1222f82fcfdd9d8b3c60f8ec3ba68f4e22d6e890",
-                "reference": "1222f82fcfdd9d8b3c60f8ec3ba68f4e22d6e890",
+                "url": "https://api.github.com/repos/hasura-extra/bundle/zipball/4aea67287f27d19d296420d6dfc8d812f1a0bbe5",
+                "reference": "4aea67287f27d19d296420d6dfc8d812f1a0bbe5",
                 "shasum": ""
             },
             "require": {
@@ -1688,10 +1691,8 @@
                 "hasura-extra/metadata": "dev-main",
                 "hasura-extra/sailor-bridge": "dev-main",
                 "php": ">=8.0",
-                "symfony/event-dispatcher": "^5.0",
                 "symfony/framework-bundle": "^5.0",
                 "symfony/psr7-pack": "^1.0",
-                "symfony/security-bundle": "^5.0",
                 "thecodingmachine/graphqlite-bundle": "^5.0"
             },
             "conflict": {
@@ -1702,6 +1703,7 @@
                 "symfony/filesystem": "^5.0",
                 "symfony/maker-bundle": "^1.0",
                 "symfony/orm-pack": "^2.1",
+                "symfony/security-bundle": "^5.0",
                 "symfony/test-pack": "^1.0",
                 "symfony/uid": "^5.0"
             },
@@ -1720,7 +1722,7 @@
             "support": {
                 "source": "https://github.com/hasura-extra/bundle/tree/main"
             },
-            "time": "2021-11-18T03:16:39+00:00"
+            "time": "2021-11-19T17:59:58+00:00"
         },
         {
             "name": "hasura-extra/event-dispatcher",
@@ -1728,12 +1730,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hasura-extra/event-dispatcher.git",
-                "reference": "bbc5c9db6f9431725e02a0dc3d9fc437803006a9"
+                "reference": "ad54f7065a5904ee00c119797076f77f5c3b8d6c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hasura-extra/event-dispatcher/zipball/bbc5c9db6f9431725e02a0dc3d9fc437803006a9",
-                "reference": "bbc5c9db6f9431725e02a0dc3d9fc437803006a9",
+                "url": "https://api.github.com/repos/hasura-extra/event-dispatcher/zipball/ad54f7065a5904ee00c119797076f77f5c3b8d6c",
+                "reference": "ad54f7065a5904ee00c119797076f77f5c3b8d6c",
                 "shasum": ""
             },
             "require": {
@@ -1760,7 +1762,7 @@
             "support": {
                 "source": "https://github.com/hasura-extra/event-dispatcher/tree/main"
             },
-            "time": "2021-11-15T02:22:25+00:00"
+            "time": "2021-11-19T18:00:00+00:00"
         },
         {
             "name": "hasura-extra/graphqlite-bridge",
@@ -1768,12 +1770,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hasura-extra/graphqlite-bridge.git",
-                "reference": "79d95d9a4acafd6df5777f661091cecec01726f1"
+                "reference": "4addd0aaca0ed6b18744b87d915ff0074a3450c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hasura-extra/graphqlite-bridge/zipball/79d95d9a4acafd6df5777f661091cecec01726f1",
-                "reference": "79d95d9a4acafd6df5777f661091cecec01726f1",
+                "url": "https://api.github.com/repos/hasura-extra/graphqlite-bridge/zipball/4addd0aaca0ed6b18744b87d915ff0074a3450c2",
+                "reference": "4addd0aaca0ed6b18744b87d915ff0074a3450c2",
                 "shasum": ""
             },
             "require": {
@@ -1801,7 +1803,7 @@
             "support": {
                 "source": "https://github.com/hasura-extra/graphqlite-bridge/tree/main"
             },
-            "time": "2021-11-16T09:39:33+00:00"
+            "time": "2021-11-19T18:00:07+00:00"
         },
         {
             "name": "hasura-extra/metadata",
@@ -1809,12 +1811,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hasura-extra/metadata.git",
-                "reference": "d5b615bfa5589ad7b0158229ba01e4c99f1e587c"
+                "reference": "e4e282fc85f2c838265cb59a503a29be2edeefbf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hasura-extra/metadata/zipball/d5b615bfa5589ad7b0158229ba01e4c99f1e587c",
-                "reference": "d5b615bfa5589ad7b0158229ba01e4c99f1e587c",
+                "url": "https://api.github.com/repos/hasura-extra/metadata/zipball/e4e282fc85f2c838265cb59a503a29be2edeefbf",
+                "reference": "e4e282fc85f2c838265cb59a503a29be2edeefbf",
                 "shasum": ""
             },
             "require": {
@@ -1824,6 +1826,9 @@
                 "symfony/filesystem": "^5.0",
                 "symfony/string": "^5.0",
                 "symfony/yaml": "^5.0"
+            },
+            "conflict": {
+                "hasura-extra/hasura-bundle": "*"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.5"
@@ -1846,7 +1851,7 @@
             "support": {
                 "source": "https://github.com/hasura-extra/metadata/tree/main"
             },
-            "time": "2021-11-18T02:26:18+00:00"
+            "time": "2021-11-19T18:00:00+00:00"
         },
         {
             "name": "hasura-extra/sailor-bridge",
@@ -1854,12 +1859,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hasura-extra/sailor-bridge.git",
-                "reference": "32fff19013e2e408f0a2999e39944bdd643e7ef7"
+                "reference": "97d318cf90a147105727ca40a934f5334ffd4519"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hasura-extra/sailor-bridge/zipball/32fff19013e2e408f0a2999e39944bdd643e7ef7",
-                "reference": "32fff19013e2e408f0a2999e39944bdd643e7ef7",
+                "url": "https://api.github.com/repos/hasura-extra/sailor-bridge/zipball/97d318cf90a147105727ca40a934f5334ffd4519",
+                "reference": "97d318cf90a147105727ca40a934f5334ffd4519",
                 "shasum": ""
             },
             "require": {
@@ -1889,7 +1894,7 @@
             "support": {
                 "source": "https://github.com/hasura-extra/sailor-bridge/tree/main"
             },
-            "time": "2021-11-17T15:32:22+00:00"
+            "time": "2021-11-19T18:00:05+00:00"
         },
         {
             "name": "laminas/laminas-code",
@@ -8895,16 +8900,16 @@
         },
         {
             "name": "webonyx/graphql-php",
-            "version": "v14.11.1",
+            "version": "v14.11.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webonyx/graphql-php.git",
-                "reference": "8f3e584335696c2eb8d307019f0afdff64fc0e35"
+                "reference": "a7192e7a2b0487dc5e185feb4f4df1fc24d35d86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webonyx/graphql-php/zipball/8f3e584335696c2eb8d307019f0afdff64fc0e35",
-                "reference": "8f3e584335696c2eb8d307019f0afdff64fc0e35",
+                "url": "https://api.github.com/repos/webonyx/graphql-php/zipball/a7192e7a2b0487dc5e185feb4f4df1fc24d35d86",
+                "reference": "a7192e7a2b0487dc5e185feb4f4df1fc24d35d86",
                 "shasum": ""
             },
             "require": {
@@ -8949,7 +8954,7 @@
             ],
             "support": {
                 "issues": "https://github.com/webonyx/graphql-php/issues",
-                "source": "https://github.com/webonyx/graphql-php/tree/v14.11.1"
+                "source": "https://github.com/webonyx/graphql-php/tree/v14.11.3"
             },
             "funding": [
                 {
@@ -8957,7 +8962,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2021-11-15T10:25:57+00:00"
+            "time": "2021-11-19T09:42:02+00:00"
         }
     ],
     "packages-dev": [
@@ -9255,16 +9260,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "9.2.8",
+            "version": "9.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "cf04e88a2e3c56fc1a65488afd493325b4c1bc3e"
+                "reference": "f301eb1453c9e7a1bc912ee8b0ea9db22c60223b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/cf04e88a2e3c56fc1a65488afd493325b4c1bc3e",
-                "reference": "cf04e88a2e3c56fc1a65488afd493325b4c1bc3e",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/f301eb1453c9e7a1bc912ee8b0ea9db22c60223b",
+                "reference": "f301eb1453c9e7a1bc912ee8b0ea9db22c60223b",
                 "shasum": ""
             },
             "require": {
@@ -9320,7 +9325,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.8"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.9"
             },
             "funding": [
                 {
@@ -9328,7 +9333,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-10-30T08:01:38+00:00"
+            "time": "2021-11-19T15:21:02+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
