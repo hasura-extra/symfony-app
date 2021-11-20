@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  pull_request: ~
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: docker-compose build
+
+      - run: docker-compose run --rm setup
+
+      - run: docker-compose up -d
+
+      - run: docker-compose run --rm apache php bin/phpunit
+
+      - run: |
+          curl -sSf http://localhost/healthz | grep -q "OK" # Apache health check
+
+      - run: |
+          curl -sSf http://localhost:8080/healthz | grep -q "OK" # Hasura health check
+
+      - run: |
+          curl -sSf -X POST http://localhost:8080/v1/graphql -d '{"query": "query { _dummy }"}' | grep -q '{"data":{"_dummy":"dummy"}}'
