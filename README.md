@@ -1,5 +1,7 @@
-Symfony App
------------
+<h1 align="center"><a href="https://hasura-extra.github.io/"><img width="620px" height="200px" src="https://hasura-extra.github.io/img/logo-text.png" alt="Hasura Extra"></a></h1>
+
+Introduction
+------------
 
 This is an application template (boilerplate) can be used to kickstart a web APIs with Hasura graphql engine.
 
