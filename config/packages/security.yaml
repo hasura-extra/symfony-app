@@ -13,7 +13,7 @@ security:
         hasura:
             memory:
                 users:
-                    hasura: { password: '%env(APP_HASURA_BASIC_AUTH)%' }
+                    hasura: { password: '%env(APP_HASURA_SECRET)%' }
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/

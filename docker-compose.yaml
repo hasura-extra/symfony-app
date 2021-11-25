@@ -10,6 +10,10 @@ services:
         PHP_VERSION: ${PHP_VERSION:-8.0}
     depends_on:
       - postgres
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-!ChangeMe!}@postgres:5432/${POSTGRES_DB:-app}?serverVersion=${POSTGRES_VERSION:-13}
+      HASURA_ADMIN_SECRET: ${HASURA_ADMIN_SECRET:-1234}
+      APP_HASURA_SECRET: ${APP_HASURA_SECRET:-!ChangeMe!}
     ports:
       - protocol: tcp
         target: 80
@@ -22,7 +26,7 @@ services:
       POSTGRES_USERNAME: ${POSTGRES_USERNAME:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-!ChangeMe!}
     volumes:
-      - db-data:/var/lib/postgresql/data:rw,cached
+      - postgres-data:/var/lib/postgresql/data:rw,cached
 
   hasura:
     image: hasura/graphql-engine:${HASURA_VERSION:-v2.1.0-beta.2}
@@ -31,11 +35,11 @@ services:
       APP_BASE_URI: 'http://apache'
       # application basic auth for Hasura identify itself. (will be use in table event & actions) see .env
       # base64_encode('hasura:!ChangeMe!');
-      APP_HASURA_BASIC_AUTH: 'Basic aGFzdXJhOiFDaGFuZ2VNZSE='
+      APP_HASURA_BASIC_AUTH: "Basic ${APP_HASURA_BASIC_AUTH:-aGFzdXJhOiFDaGFuZ2VNZSE=}"
       # https://hasura.io/docs/latest/graphql/core/deployment/graphql-engine-flags/reference.html
-      HASURA_GRAPHQL_ADMIN_SECRET: '1234'
+      HASURA_GRAPHQL_ADMIN_SECRET: ${HASURA_ADMIN_SECRET:-1234}
       HASURA_GRAPHQL_AUTH_HOOK: 'http://apache/hasura_auth_hook'
-      HASURA_GRAPHQL_DATABASE_URL: postgresql://postgres:!ChangeMe!@postgres/app
+      HASURA_GRAPHQL_DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-!ChangeMe!}@postgres/${POSTGRES_DB:-app}
       HASURA_GRAPHQL_EXPERIMENTAL_FEATURES: 'inherited_roles'
       HASURA_GRAPHQL_ENABLE_REMOTE_SCHEMA_PERMISSIONS: 'true'
       HASURA_GRAPHQL_ENABLE_CONSOLE: 'false'
@@ -50,4 +54,4 @@ services:
         published: 8080
 
 volumes:
-  db-data:
+  postgres-data:
