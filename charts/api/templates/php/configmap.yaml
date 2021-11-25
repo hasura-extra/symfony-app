@@ -13,4 +13,4 @@ data:
   APP_DEBUG: {{ .Values.apache.appDebug | quote }}
   TRUSTED_HOSTS: {{ tpl .Values.apache.trustedHosts $ | quote }}
   TRUSTED_PROXIES: {{ .Values.apache.trustedProxies | quote }}
-  HASURA_BASE_URI: "http://{{ .Values.hasura.fullnameOverride }}.{{ .Release.Namespace }}.svc.cluster.local"
+  HASURA_BASE_URI: {{ tpl .Values.apache.hasuraBaseUri $ | quote }}

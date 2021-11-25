@@ -7,8 +7,11 @@ apache:
   appEnv: prod
   appDebug: 0
   appSecret: "!ChangeMe!"
+  appHasuraSecret: "!ChangeMe!"
+  hasuraBaseUri: 'http://{{ .Values.hasura.fullnameOverride }}.{{ .Release.Namespace }}.svc.cluster.local'
+  hasuraAdminSecret: '{{ .Values.hasura.adminSecret }}'
   trustedHosts: '^(localhost|{{ include "api.name" . }}-apache\.{{ .Release.Namespace }}\.svc\.cluster\.local)$'
-  trustedProxies: '127.0.0.1'
+  trustedProxies: '127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16'
   image:
     repository: localhost:5000/apache-prod
     pullPolicy: IfNotPresent
@@ -92,7 +95,7 @@ hasura:
   adminSecret: "!ChangeMe!"
   authHook: "http://api-apache.{{ .Release.Namespace }}.svc.cluster.local/hasura_auth_hook"
   extraEnvVarsSecret:
-    APP_HASURA_BASIC_AUTH: "!ChangeMe!"
+    APP_HASURA_BASIC_AUTH: 'Basic {{ "hasura:!ChangeMe!" | b64enc }}'
   extraEnvVarsCM:
     APP_BASE_URI: "http://api-apache.{{ .Release.Namespace }}.svc.cluster.local"
 

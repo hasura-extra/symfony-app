@@ -14,10 +14,6 @@ services:
       DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-!ChangeMe!}@postgres:5432/${POSTGRES_DB:-app}?serverVersion=${POSTGRES_VERSION:-13}
       HASURA_ADMIN_SECRET: ${HASURA_ADMIN_SECRET:-1234}
       APP_HASURA_SECRET: ${APP_HASURA_SECRET:-!ChangeMe!}
-    ports:
-      - protocol: tcp
-        target: 80
-        published: 80
 
   postgres:
     image: postgres:${POSTGRES_VERSION:-13}-alpine
@@ -48,10 +44,6 @@ services:
     depends_on:
       - apache
       - postgres
-    ports:
-      - protocol: tcp
-        target: 8080
-        published: 8080
 
 volumes:
   postgres-data:

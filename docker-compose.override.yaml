@@ -1,13 +1,11 @@
 version: '3'
 
-x-php-build-args: &php-build-args
-  PHP_EXTENSIONS: 'intl gd pdo_pgsql apcu xdebug'
-
 services:
   apache:
     image: localhost:5000/apache-dev:latest
     build:
-      args: *php-build-args
+      args:
+        PHP_EXTENSIONS: 'intl gd pdo_pgsql apcu xdebug'
     volumes:
       - $PWD:/var/www/html:rw,cached
       # By default var dir will be chosen automatically, usually under /var/lib/docker/volumes/
@@ -21,6 +19,10 @@ services:
       APACHE_RUN_USER: docker
       APACHE_RUN_GROUP: docker
       PHP_INI_OPCACHE__PRELOAD: ""
+    ports:
+      - protocol: tcp
+        target: 80
+        published: 80
 
   postgres:
     ports:
@@ -35,12 +37,17 @@ services:
       HASURA_GRAPHQL_DEV_MODE: 'true'
       HASURA_GRAPHQL_ENABLE_CONSOLE: 'true'
       HASURA_GRAPHQL_ADMIN_INTERNAL_ERRORS: 'true'
+    ports:
+      - protocol: tcp
+        target: 8080
+        published: 8080
 
   setup:
     build:
       dockerfile: ./docker/apache/Dockerfile
       context: .
-      args: *php-build-args
+      args:
+        PHP_EXTENSIONS: 'intl gd pdo_pgsql apcu xdebug'
     command:
       - /bin/bash
       - /etc/container/setup.sh
