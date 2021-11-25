@@ -54,6 +54,9 @@ services:
     environment:
       APP_ENV: dev
       APP_DEBUG: 1
+      DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-!ChangeMe!}@postgres:5432/${POSTGRES_DB:-app}?serverVersion=${POSTGRES_VERSION:-13}
+      HASURA_ADMIN_SECRET: ${HASURA_ADMIN_SECRET:-1234}
+      APP_HASURA_SECRET: ${APP_HASURA_SECRET:-!ChangeMe!}
       TEMPLATE_PHP_INI: development
       PHP_INI_OPCACHE__VALIDATE_TIMESTAMPS: 1
       APACHE_RUN_USER: docker
