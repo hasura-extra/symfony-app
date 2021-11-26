@@ -12,6 +12,9 @@ apache:
   hasuraAdminSecret: '{{ .Values.hasura.adminSecret }}'
   trustedHosts: '^(localhost|{{ include "api.name" . }}-apache\.{{ .Release.Namespace }}\.svc\.cluster\.local)$'
   trustedProxies: '127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16'
+  jwtSecretKey: "!ChangeMe!"
+  jwtPublicKey: "!ChangeMe!"
+  mailerDsn: "!ChangeMe!"
   image:
     repository: localhost:5000/apache-prod
     pullPolicy: IfNotPresent
