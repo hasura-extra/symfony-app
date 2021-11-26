@@ -1,6 +1,14 @@
 version: '3'
 
 services:
+  apache:
+    environment:
+      APP_SECRET: ${APP_SECRET}
+      HASURA_BASE_URI: ${HASURA_BASE_URI:-http://hasura:8080}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY}
+      JWT_PUBLIC_KEY: ${JWT_PUBLIC_KEY}
+      MAILER_DSN: ${MAILER_DSN}
+
   hasura:
     ports:
       - protocol: tcp
