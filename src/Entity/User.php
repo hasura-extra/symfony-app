@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use App\Security\SystemRoles;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -68,7 +69,7 @@ class User implements PasswordAuthenticatedUserInterface, UserInterface
 
     public function getRoles()
     {
-        return ['ROLE_USER'];
+        return [SystemRoles::ROLE_USER];
     }
 
     public function getSalt()
