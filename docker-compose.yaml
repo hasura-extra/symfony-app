@@ -38,7 +38,7 @@ services:
       HASURA_GRAPHQL_DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-!ChangeMe!}@postgres/${POSTGRES_DB:-app}
       HASURA_GRAPHQL_EXPERIMENTAL_FEATURES: 'inherited_roles'
       HASURA_GRAPHQL_ENABLE_REMOTE_SCHEMA_PERMISSIONS: 'true'
-      HASURA_GRAPHQL_ENABLE_CONSOLE: 'false'
+      HASURA_GRAPHQL_ENABLE_CONSOLE: 'true'
       HASURA_GRAPHQL_LOG_LEVEL: 'warn'
       HASURA_GRAPHQL_ENABLED_APIS: 'metadata, graphql'
     depends_on:

@@ -35,7 +35,6 @@ services:
       HASURA_GRAPHQL_ENABLED_APIS: 'metadata,graphql,pgdump,config'
       HASURA_GRAPHQL_LOG_LEVEL: 'debug'
       HASURA_GRAPHQL_DEV_MODE: 'true'
-      HASURA_GRAPHQL_ENABLE_CONSOLE: 'true'
       HASURA_GRAPHQL_ADMIN_INTERNAL_ERRORS: 'true'
     ports:
       - protocol: tcp
