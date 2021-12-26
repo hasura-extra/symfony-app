@@ -1,9 +1,9 @@
 dependencies:
 - name: hasura
   repository: https://hasura-extra.github.io/hasura-extra
-  version: 2.1.2
+  version: 2.1.4
 - name: postgresql
   repository: https://charts.bitnami.com/bitnami
-  version: 10.13.8
-digest: sha256:bbd3eb76ac2ecd4eb1e53bb433f35dbf2c6d9f7b1668586dea8e9a883fcda884
-generated: "2021-11-25T12:17:25.043761193+07:00"
+  version: 10.13.15
+digest: sha256:817f28c09d2601f14befd3d3897eb9201f084cf027124d11f91cdb1919a9e1e2
+generated: "2021-12-26T11:06:52.230121456+07:00"

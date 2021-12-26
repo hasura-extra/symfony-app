@@ -25,7 +25,7 @@ services:
       - postgres-data:/var/lib/postgresql/data:rw,cached
 
   hasura:
-    image: hasura/graphql-engine:${HASURA_VERSION:-v2.1.0-beta.2}
+    image: hasura/graphql-engine:${HASURA_VERSION:-v2.1.1}
     restart: on-failure
     environment:
       APP_BASE_URI: 'http://apache'
