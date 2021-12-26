@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\GraphQLExecutor\Countries;
+namespace App\GraphQLExecutor\Operations\Countries;
 
 class CountriesErrorFreeResult extends \Spawnia\Sailor\ErrorFreeResult
 {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Command;
 
-use App\GraphQLExecutor\Countries;
+use App\GraphQLExecutor\Operations\Countries;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -27,7 +27,7 @@ final class GetCountries extends Command
         $io->table(
             ['Name', 'Capital', 'Currency'],
             array_map(
-                fn(Countries\Countries\Countries $item) => [
+                fn(Countries\Countries\Country $item) => [
                     $item->name,
                     $item->capital,
                     $item->currency
