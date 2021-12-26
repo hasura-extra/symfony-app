@@ -11,7 +11,7 @@
         "doctrine/doctrine-bundle": "^2.4",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.10",
-        "hasura-extra/bundle": "^2.1",
+        "hasura-extra/bundle": "^2.2",
         "lexik/jwt-authentication-bundle": "^2.14",
         "symfony/console": "5.3.*",
         "symfony/dotenv": "5.3.*",

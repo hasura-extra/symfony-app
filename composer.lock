@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6f53e827ef9ede443f2fab6570889c8b",
+    "content-hash": "de9cdd8fcaba3754fcc01da924955721",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -1203,16 +1203,16 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "2.10.3",
+            "version": "2.10.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/orm.git",
-                "reference": "7b242753466508e1dd10f67c1baee95785f845c1"
+                "reference": "cccb2e2fdfed2969afb3d65c5ea82bafdefbe1a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/orm/zipball/7b242753466508e1dd10f67c1baee95785f845c1",
-                "reference": "7b242753466508e1dd10f67c1baee95785f845c1",
+                "url": "https://api.github.com/repos/doctrine/orm/zipball/cccb2e2fdfed2969afb3d65c5ea82bafdefbe1a7",
+                "reference": "cccb2e2fdfed2969afb3d65c5ea82bafdefbe1a7",
                 "shasum": ""
             },
             "require": {
@@ -1244,10 +1244,10 @@
                 "phpbench/phpbench": "^0.16.10 || ^1.0",
                 "phpstan/phpstan": "1.2.0",
                 "phpunit/phpunit": "^7.5 || ^8.5 || ^9.4",
-                "squizlabs/php_codesniffer": "3.6.1",
+                "squizlabs/php_codesniffer": "3.6.2",
                 "symfony/cache": "^4.4 || ^5.2",
                 "symfony/yaml": "^3.4 || ^4.0 || ^5.0 || ^6.0",
-                "vimeo/psalm": "4.13.1"
+                "vimeo/psalm": "4.15.0"
             },
             "suggest": {
                 "symfony/cache": "Provides cache support for Setup Tool with doctrine/cache 2.0",
@@ -1296,9 +1296,9 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/orm/issues",
-                "source": "https://github.com/doctrine/orm/tree/2.10.3"
+                "source": "https://github.com/doctrine/orm/tree/2.10.4"
             },
-            "time": "2021-12-03T12:27:05+00:00"
+            "time": "2021-12-20T21:23:47+00:00"
         },
         {
             "name": "doctrine/persistence",
@@ -1591,16 +1591,16 @@
         },
         {
             "name": "hasura-extra/api-client",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hasura-extra/api-client.git",
-                "reference": "9d7f6805646fd7357f4c8a640343ef8c7d20d80f"
+                "reference": "e706432e2203adc20b3fb49d56de63586d5c8b9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hasura-extra/api-client/zipball/9d7f6805646fd7357f4c8a640343ef8c7d20d80f",
-                "reference": "9d7f6805646fd7357f4c8a640343ef8c7d20d80f",
+                "url": "https://api.github.com/repos/hasura-extra/api-client/zipball/e706432e2203adc20b3fb49d56de63586d5c8b9e",
+                "reference": "e706432e2203adc20b3fb49d56de63586d5c8b9e",
                 "shasum": ""
             },
             "require": {
@@ -1608,14 +1608,14 @@
                 "symfony/http-client": "^5.0"
             },
             "conflict": {
-                "hasura-extra/auth-hook": "<2.1.0",
-                "hasura-extra/bundle": "<2.1.0",
-                "hasura-extra/event-dispatcher": "<2.1.0",
-                "hasura-extra/graphqlite-bridge": "<2.1.0",
+                "hasura-extra/auth-hook": "<2.2.0",
+                "hasura-extra/bundle": "<2.2.0",
+                "hasura-extra/event-dispatcher": "<2.2.0",
+                "hasura-extra/graphqlite-bridge": "<2.2.0",
                 "hasura-extra/hasura-bundle": "*",
-                "hasura-extra/laravel": "<2.1.0",
-                "hasura-extra/metadata": "<2.1.0",
-                "hasura-extra/sailor-bridge": "<2.1.0"
+                "hasura-extra/laravel": "<2.2.0",
+                "hasura-extra/metadata": "<2.2.0",
+                "hasura-extra/sailor-bridge": "<2.2.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.5"
@@ -1623,7 +1623,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.1-dev"
+                    "dev-main": "2.2-dev"
                 }
             },
             "autoload": {
@@ -1637,22 +1637,22 @@
             ],
             "description": "The library provides an api client to interact with Hasura api.",
             "support": {
-                "source": "https://github.com/hasura-extra/api-client/tree/2.1.0"
+                "source": "https://github.com/hasura-extra/api-client/tree/2.2.0"
             },
-            "time": "2021-12-05T03:33:02+00:00"
+            "time": "2021-12-26T03:47:32+00:00"
         },
         {
             "name": "hasura-extra/auth-hook",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hasura-extra/auth-hook.git",
-                "reference": "2f71188f965ba9e5eea34a74de840ad51b61639e"
+                "reference": "6c6aaa4c019f2ebcfadc7a11a80372f136d1852e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hasura-extra/auth-hook/zipball/2f71188f965ba9e5eea34a74de840ad51b61639e",
-                "reference": "2f71188f965ba9e5eea34a74de840ad51b61639e",
+                "url": "https://api.github.com/repos/hasura-extra/auth-hook/zipball/6c6aaa4c019f2ebcfadc7a11a80372f136d1852e",
+                "reference": "6c6aaa4c019f2ebcfadc7a11a80372f136d1852e",
                 "shasum": ""
             },
             "require": {
@@ -1661,13 +1661,13 @@
                 "psr/http-server-handler": "^1.0"
             },
             "conflict": {
-                "hasura-extra/api-client": "<2.1.0",
-                "hasura-extra/bundle": "<2.1.0",
-                "hasura-extra/event-dispatcher": "<2.1.0",
-                "hasura-extra/graphqlite-bridge": "<2.1.0",
-                "hasura-extra/laravel": "<2.1.0",
-                "hasura-extra/metadata": "<2.1.0",
-                "hasura-extra/sailor-bridge": "<2.1.0"
+                "hasura-extra/api-client": "<2.2.0",
+                "hasura-extra/bundle": "<2.2.0",
+                "hasura-extra/event-dispatcher": "<2.2.0",
+                "hasura-extra/graphqlite-bridge": "<2.2.0",
+                "hasura-extra/laravel": "<2.2.0",
+                "hasura-extra/metadata": "<2.2.0",
+                "hasura-extra/sailor-bridge": "<2.2.0"
             },
             "require-dev": {
                 "nyholm/psr7": "^1.0",
@@ -1676,7 +1676,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.1-dev"
+                    "dev-main": "2.2-dev"
                 }
             },
             "autoload": {
@@ -1691,31 +1691,31 @@
             "description": "Webhook authentication for Hasura.",
             "support": {
                 "issues": "https://github.com/hasura-extra/auth-hook/issues",
-                "source": "https://github.com/hasura-extra/auth-hook/tree/2.1.0"
+                "source": "https://github.com/hasura-extra/auth-hook/tree/2.2.0"
             },
-            "time": "2021-12-05T03:33:03+00:00"
+            "time": "2021-12-26T03:47:39+00:00"
         },
         {
             "name": "hasura-extra/bundle",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hasura-extra/bundle.git",
-                "reference": "75728f29576d6fe9149c276b438a383ce9f45dcd"
+                "reference": "a4fa5f5a95a76f5ee50a2e726fa32e9ba98d196b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hasura-extra/bundle/zipball/75728f29576d6fe9149c276b438a383ce9f45dcd",
-                "reference": "75728f29576d6fe9149c276b438a383ce9f45dcd",
+                "url": "https://api.github.com/repos/hasura-extra/bundle/zipball/a4fa5f5a95a76f5ee50a2e726fa32e9ba98d196b",
+                "reference": "a4fa5f5a95a76f5ee50a2e726fa32e9ba98d196b",
                 "shasum": ""
             },
             "require": {
-                "hasura-extra/api-client": "^2.1",
-                "hasura-extra/auth-hook": "^2.1",
-                "hasura-extra/event-dispatcher": "^2.1",
-                "hasura-extra/graphqlite-bridge": "^2.1",
-                "hasura-extra/metadata": "^2.1",
-                "hasura-extra/sailor-bridge": "^2.1",
+                "hasura-extra/api-client": "^2.2",
+                "hasura-extra/auth-hook": "^2.2",
+                "hasura-extra/event-dispatcher": "^2.2",
+                "hasura-extra/graphqlite-bridge": "^2.2",
+                "hasura-extra/metadata": "^2.2",
+                "hasura-extra/sailor-bridge": "^2.2",
                 "php": ">=8.0",
                 "symfony/dependency-injection": "^5.0",
                 "symfony/framework-bundle": "^5.0",
@@ -1725,7 +1725,7 @@
             },
             "conflict": {
                 "hasura-extra/hasura-bundle": "*",
-                "hasura-extra/laravel": "<2.1.0"
+                "hasura-extra/laravel": "<2.2.0"
             },
             "require-dev": {
                 "doctrine/doctrine-bundle": "^2.4",
@@ -1740,7 +1740,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.1-dev"
+                    "dev-main": "2.2-dev"
                 }
             },
             "autoload": {
@@ -1754,22 +1754,22 @@
             ],
             "description": "Symfony bundle to build modern web APIs with Hasura graphql engine.",
             "support": {
-                "source": "https://github.com/hasura-extra/bundle/tree/2.1.0"
+                "source": "https://github.com/hasura-extra/bundle/tree/2.2.0"
             },
-            "time": "2021-12-05T03:33:06+00:00"
+            "time": "2021-12-26T03:47:42+00:00"
         },
         {
             "name": "hasura-extra/event-dispatcher",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hasura-extra/event-dispatcher.git",
-                "reference": "fad6df85792c4895e422b3d43e73fef629059fdd"
+                "reference": "aab6e10bae345ec27abee3b5bc54093b8c476027"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hasura-extra/event-dispatcher/zipball/fad6df85792c4895e422b3d43e73fef629059fdd",
-                "reference": "fad6df85792c4895e422b3d43e73fef629059fdd",
+                "url": "https://api.github.com/repos/hasura-extra/event-dispatcher/zipball/aab6e10bae345ec27abee3b5bc54093b8c476027",
+                "reference": "aab6e10bae345ec27abee3b5bc54093b8c476027",
                 "shasum": ""
             },
             "require": {
@@ -1778,13 +1778,13 @@
                 "psr/http-server-handler": "^1.0"
             },
             "conflict": {
-                "hasura-extra/api-client": "<2.1.0",
-                "hasura-extra/auth-hook": "<2.1.0",
-                "hasura-extra/bundle": "<2.1.0",
-                "hasura-extra/graphqlite-bridge": "<2.1.0",
-                "hasura-extra/laravel": "<2.1.0",
-                "hasura-extra/metadata": "<2.1.0",
-                "hasura-extra/sailor-bridge": "<2.1.0"
+                "hasura-extra/api-client": "<2.2.0",
+                "hasura-extra/auth-hook": "<2.2.0",
+                "hasura-extra/bundle": "<2.2.0",
+                "hasura-extra/graphqlite-bridge": "<2.2.0",
+                "hasura-extra/laravel": "<2.2.0",
+                "hasura-extra/metadata": "<2.2.0",
+                "hasura-extra/sailor-bridge": "<2.2.0"
             },
             "require-dev": {
                 "nyholm/psr7": "^1.0",
@@ -1793,7 +1793,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.1-dev"
+                    "dev-main": "2.2-dev"
                 }
             },
             "autoload": {
@@ -1807,45 +1807,45 @@
             ],
             "description": "Support to dispatch events triggered by Hasura.",
             "support": {
-                "source": "https://github.com/hasura-extra/event-dispatcher/tree/2.1.0"
+                "source": "https://github.com/hasura-extra/event-dispatcher/tree/2.2.0"
             },
-            "time": "2021-12-05T03:33:05+00:00"
+            "time": "2021-12-26T03:47:41+00:00"
         },
         {
             "name": "hasura-extra/graphqlite-bridge",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hasura-extra/graphqlite-bridge.git",
-                "reference": "2eacefb0b709df1df16410fd97f15ba5e8608e78"
+                "reference": "ae92cfd848815babddd1b8a28a472c1160bce739"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hasura-extra/graphqlite-bridge/zipball/2eacefb0b709df1df16410fd97f15ba5e8608e78",
-                "reference": "2eacefb0b709df1df16410fd97f15ba5e8608e78",
+                "url": "https://api.github.com/repos/hasura-extra/graphqlite-bridge/zipball/ae92cfd848815babddd1b8a28a472c1160bce739",
+                "reference": "ae92cfd848815babddd1b8a28a472c1160bce739",
                 "shasum": ""
             },
             "require": {
-                "hasura-extra/api-client": "^2.1",
-                "hasura-extra/metadata": "^2.1",
+                "hasura-extra/api-client": "^2.2",
+                "hasura-extra/metadata": "^2.2",
                 "php": ">=8.0",
+                "symfony/uid": "^5.0",
                 "thecodingmachine/graphqlite": "^5.0"
             },
             "conflict": {
-                "hasura-extra/auth-hook": "<2.1.0",
-                "hasura-extra/bundle": "<2.1.0",
-                "hasura-extra/event-dispatcher": "<2.1.0",
-                "hasura-extra/laravel": "<2.1.0",
-                "hasura-extra/sailor-bridge": "<2.1.0"
+                "hasura-extra/auth-hook": "<2.2.0",
+                "hasura-extra/bundle": "<2.2.0",
+                "hasura-extra/event-dispatcher": "<2.2.0",
+                "hasura-extra/laravel": "<2.2.0",
+                "hasura-extra/sailor-bridge": "<2.2.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9.5",
-                "symfony/uid": "^5.0"
+                "phpunit/phpunit": "^9.5"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.1-dev"
+                    "dev-main": "2.2-dev"
                 }
             },
             "autoload": {
@@ -1859,26 +1859,26 @@
             ],
             "description": "Provides integration for GraphQLite with Hasura Extra packages.",
             "support": {
-                "source": "https://github.com/hasura-extra/graphqlite-bridge/tree/2.1.0"
+                "source": "https://github.com/hasura-extra/graphqlite-bridge/tree/2.2.0"
             },
-            "time": "2021-12-05T03:33:07+00:00"
+            "time": "2021-12-26T03:47:41+00:00"
         },
         {
             "name": "hasura-extra/metadata",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hasura-extra/metadata.git",
-                "reference": "4698bb0a04296bbeb454a5be9adb467b2598d77b"
+                "reference": "35d1a01a92fd4cb6c33eb825ed9c650c4d77a306"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hasura-extra/metadata/zipball/4698bb0a04296bbeb454a5be9adb467b2598d77b",
-                "reference": "4698bb0a04296bbeb454a5be9adb467b2598d77b",
+                "url": "https://api.github.com/repos/hasura-extra/metadata/zipball/35d1a01a92fd4cb6c33eb825ed9c650c4d77a306",
+                "reference": "35d1a01a92fd4cb6c33eb825ed9c650c4d77a306",
                 "shasum": ""
             },
             "require": {
-                "hasura-extra/api-client": "^2.1",
+                "hasura-extra/api-client": "^2.2",
                 "php": ">=8.0",
                 "symfony/console": "^5.0",
                 "symfony/filesystem": "^5.0",
@@ -1886,13 +1886,13 @@
                 "symfony/yaml": "^5.0"
             },
             "conflict": {
-                "hasura-extra/auth-hook": "<2.1.0",
-                "hasura-extra/bundle": "<2.1.0",
-                "hasura-extra/event-dispatcher": "<2.1.0",
-                "hasura-extra/graphqlite-bridge": "<2.1.0",
+                "hasura-extra/auth-hook": "<2.2.0",
+                "hasura-extra/bundle": "<2.2.0",
+                "hasura-extra/event-dispatcher": "<2.2.0",
+                "hasura-extra/graphqlite-bridge": "<2.2.0",
                 "hasura-extra/hasura-bundle": "*",
-                "hasura-extra/laravel": "<2.1.0",
-                "hasura-extra/sailor-bridge": "<2.1.0"
+                "hasura-extra/laravel": "<2.2.0",
+                "hasura-extra/sailor-bridge": "<2.2.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.5"
@@ -1903,7 +1903,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.1-dev"
+                    "dev-main": "2.2-dev"
                 }
             },
             "autoload": {
@@ -1917,36 +1917,37 @@
             ],
             "description": "The library help to manage Hasura metadata.",
             "support": {
-                "source": "https://github.com/hasura-extra/metadata/tree/2.1.0"
+                "source": "https://github.com/hasura-extra/metadata/tree/2.2.0"
             },
-            "time": "2021-12-05T03:33:06+00:00"
+            "time": "2021-12-26T03:47:41+00:00"
         },
         {
             "name": "hasura-extra/sailor-bridge",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hasura-extra/sailor-bridge.git",
-                "reference": "296d40e3792111d6225cfef4f1bd6bac21d4f58b"
+                "reference": "941edd9b3ed091eb43699e036951c3c7e9af3f9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hasura-extra/sailor-bridge/zipball/296d40e3792111d6225cfef4f1bd6bac21d4f58b",
-                "reference": "296d40e3792111d6225cfef4f1bd6bac21d4f58b",
+                "url": "https://api.github.com/repos/hasura-extra/sailor-bridge/zipball/941edd9b3ed091eb43699e036951c3c7e9af3f9c",
+                "reference": "941edd9b3ed091eb43699e036951c3c7e9af3f9c",
                 "shasum": ""
             },
             "require": {
-                "hasura-extra/api-client": "^2.1",
+                "hasura-extra/api-client": "^2.2",
                 "php": ">=8.0",
-                "spawnia/sailor": "^v0.10"
+                "spawnia/sailor": "^v0.14",
+                "symfony/uid": "^5.0"
             },
             "conflict": {
-                "hasura-extra/auth-hook": "<2.1.0",
-                "hasura-extra/bundle": "<2.1.0",
-                "hasura-extra/event-dispatcher": "<2.1.0",
-                "hasura-extra/graphqlite-bridge": "<2.1.0",
-                "hasura-extra/laravel": "<2.1.0",
-                "hasura-extra/metadata": "<2.1.0"
+                "hasura-extra/auth-hook": "<2.2.0",
+                "hasura-extra/bundle": "<2.2.0",
+                "hasura-extra/event-dispatcher": "<2.2.0",
+                "hasura-extra/graphqlite-bridge": "<2.2.0",
+                "hasura-extra/laravel": "<2.2.0",
+                "hasura-extra/metadata": "<2.2.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.5",
@@ -1958,7 +1959,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.1-dev"
+                    "dev-main": "2.2-dev"
                 }
             },
             "autoload": {
@@ -1972,49 +1973,48 @@
             ],
             "description": "Provide integration for Sailor graphql client with Hasura Extra packages.",
             "support": {
-                "source": "https://github.com/hasura-extra/sailor-bridge/tree/2.1.0"
+                "source": "https://github.com/hasura-extra/sailor-bridge/tree/2.2.0"
             },
-            "time": "2021-12-05T03:33:07+00:00"
+            "time": "2021-12-26T03:47:59+00:00"
         },
         {
             "name": "laminas/laminas-code",
-            "version": "4.4.3",
+            "version": "4.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-code.git",
-                "reference": "bb324850d09dd437b6acb142c13e64fdc725b0e1"
+                "reference": "6fd96d4d913571a2cd056a27b123fa28cb90ac4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-code/zipball/bb324850d09dd437b6acb142c13e64fdc725b0e1",
-                "reference": "bb324850d09dd437b6acb142c13e64fdc725b0e1",
+                "url": "https://api.github.com/repos/laminas/laminas-code/zipball/6fd96d4d913571a2cd056a27b123fa28cb90ac4e",
+                "reference": "6fd96d4d913571a2cd056a27b123fa28cb90ac4e",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.4 || ~8.0.0"
-            },
-            "conflict": {
-                "phpspec/prophecy": "<1.9.0"
+                "php": ">=7.4, <8.2"
             },
             "require-dev": {
-                "doctrine/annotations": "^1.10.4",
+                "doctrine/annotations": "^1.13.2",
                 "ext-phar": "*",
-                "laminas/laminas-coding-standard": "^2.1.4",
-                "laminas/laminas-stdlib": "^3.3.0",
-                "phpunit/phpunit": "^9.4.2",
-                "psalm/plugin-phpunit": "^0.14.0",
-                "vimeo/psalm": "^4.3.1"
+                "laminas/laminas-coding-standard": "^2.3.0",
+                "laminas/laminas-stdlib": "^3.6.1",
+                "phpunit/phpunit": "^9.5.10",
+                "psalm/plugin-phpunit": "^0.16.1",
+                "vimeo/psalm": "^4.13.1"
             },
             "suggest": {
                 "doctrine/annotations": "Doctrine\\Common\\Annotations >=1.0 for annotation features",
-                "laminas/laminas-stdlib": "Laminas\\Stdlib component",
-                "laminas/laminas-zendframework-bridge": "A bridge with Zend Framework"
+                "laminas/laminas-stdlib": "Laminas\\Stdlib component"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "Laminas\\Code\\": "src/"
-                }
+                },
+                "files": [
+                    "polyfill/ReflectionEnumPolyfill.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2041,7 +2041,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2021-09-21T13:40:23+00:00"
+            "time": "2021-12-19T18:06:55+00:00"
         },
         {
             "name": "laminas/laminas-diactoros",
@@ -2278,16 +2278,16 @@
         },
         {
             "name": "lexik/jwt-authentication-bundle",
-            "version": "v2.14.1",
+            "version": "v2.14.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lexik/LexikJWTAuthenticationBundle.git",
-                "reference": "66ef4199d00b9387a72543c15a168a659f61f192"
+                "reference": "174fd218eb9ecec8228d00e32dc5f457d8df51c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lexik/LexikJWTAuthenticationBundle/zipball/66ef4199d00b9387a72543c15a168a659f61f192",
-                "reference": "66ef4199d00b9387a72543c15a168a659f61f192",
+                "url": "https://api.github.com/repos/lexik/LexikJWTAuthenticationBundle/zipball/174fd218eb9ecec8228d00e32dc5f457d8df51c4",
+                "reference": "174fd218eb9ecec8228d00e32dc5f457d8df51c4",
                 "shasum": ""
             },
             "require": {
@@ -2297,7 +2297,7 @@
                 "php": ">=7.1",
                 "symfony/config": "^4.4|^5.3|^6.0",
                 "symfony/dependency-injection": "^4.4|^5.3|^6.0",
-                "symfony/deprecation-contracts": "^2.4",
+                "symfony/deprecation-contracts": "^2.4|^3.0",
                 "symfony/event-dispatcher": "^4.4|^5.3|^6.0",
                 "symfony/http-foundation": "^4.4|^5.3|^6.0",
                 "symfony/http-kernel": "^4.4|^5.3|^6.0",
@@ -2325,11 +2325,6 @@
                 "spomky-labs/lexik-jose-bridge": "Provides a JWT Token encoder with encryption support"
             },
             "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Lexik\\Bundle\\JWTAuthenticationBundle\\": ""
@@ -2386,7 +2381,7 @@
             ],
             "support": {
                 "issues": "https://github.com/lexik/LexikJWTAuthenticationBundle/issues",
-                "source": "https://github.com/lexik/LexikJWTAuthenticationBundle/tree/v2.14.1"
+                "source": "https://github.com/lexik/LexikJWTAuthenticationBundle/tree/v2.14.3"
             },
             "funding": [
                 {
@@ -2398,7 +2393,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-11-02T00:05:11+00:00"
+            "time": "2021-12-15T15:22:27+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3650,49 +3645,54 @@
         },
         {
             "name": "spawnia/sailor",
-            "version": "v0.10.2",
+            "version": "v0.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spawnia/sailor.git",
-                "reference": "77ba1451bdc80126214af855af331f32f0694f51"
+                "reference": "f6d7fa10bf1b66a21d11a3bd67bf5befc5fe99e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spawnia/sailor/zipball/77ba1451bdc80126214af855af331f32f0694f51",
-                "reference": "77ba1451bdc80126214af855af331f32f0694f51",
+                "url": "https://api.github.com/repos/spawnia/sailor/zipball/f6d7fa10bf1b66a21d11a3bd67bf5befc5fe99e2",
+                "reference": "f6d7fa10bf1b66a21d11a3bd67bf5befc5fe99e2",
                 "shasum": ""
             },
             "require": {
+                "ext-json": "*",
                 "nette/php-generator": "^3.6.3",
                 "php": "^7.4 || ^8",
                 "psr/http-client": "^1",
-                "symfony/console": "^5",
+                "symfony/console": "^5 || ^6",
+                "symfony/var-exporter": "^5.3 || ^6",
                 "thecodingmachine/safe": "^1",
-                "webonyx/graphql-php": "^14"
+                "webonyx/graphql-php": "^14.11.3"
             },
             "require-dev": {
+                "bensampo/laravel-enum": "^3 || ^4.1",
                 "composer/composer": "^2",
                 "ergebnis/composer-normalize": "^2.13",
                 "guzzlehttp/guzzle": "^7",
                 "infection/infection": "~0.21",
-                "jangregor/phpstan-prophecy": "~0.8.1",
+                "jangregor/phpstan-prophecy": "^1",
+                "mll-lab/php-cs-fixer-config": "^4.3",
                 "mockery/mockery": "^1.4",
                 "nyholm/psr7": "^1.4",
                 "php-http/httplug": "^2",
                 "php-http/mock-client": "^1.4",
                 "phpstan/extension-installer": "^1",
-                "phpstan/phpstan": "~0.12.76",
-                "phpstan/phpstan-deprecation-rules": "~0.12.6",
-                "phpstan/phpstan-mockery": "^0.12.12",
-                "phpstan/phpstan-phpunit": "~0.12.17",
-                "phpstan/phpstan-strict-rules": "~0.12.9",
+                "phpstan/phpstan": "^1",
+                "phpstan/phpstan-deprecation-rules": "^1",
+                "phpstan/phpstan-mockery": "^1",
+                "phpstan/phpstan-phpunit": "^1",
+                "phpstan/phpstan-strict-rules": "^1",
                 "phpunit/phpunit": "^9.5.2",
                 "spawnia/phpunit-assert-directory": "^2",
                 "symfony/var-dumper": "^5.2.3",
-                "thecodingmachine/phpstan-safe-rule": "^1"
+                "thecodingmachine/phpstan-safe-rule": "^1.1"
             },
             "suggest": {
-                "guzzle/guzzle": "Enables using the built-in default Client",
+                "bensampo/laravel-enum": "Use with BenSampoEnumTypeConfig",
+                "guzzlehttp/guzzle": "Enables using the built-in default Client",
                 "mockery/mockery": "Used in Operation::mock()"
             },
             "bin": [
@@ -3726,7 +3726,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-11-03T18:26:07+00:00"
+            "time": "2021-12-21T16:02:39+00:00"
         },
         {
             "name": "symfony/cache",
@@ -6444,6 +6444,85 @@
             "time": "2021-05-21T13:25:03+00:00"
         },
         {
+            "name": "symfony/polyfill-uuid",
+            "version": "v1.23.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-uuid.git",
+                "reference": "9165effa2eb8a31bb3fa608df9d529920d21ddd9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-uuid/zipball/9165effa2eb8a31bb3fa608df9d529920d21ddd9",
+                "reference": "9165effa2eb8a31bb3fa608df9d529920d21ddd9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "suggest": {
+                "ext-uuid": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.23-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Uuid\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Grégoire Pineau",
+                    "email": "lyrixx@lyrixx.info"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for uuid functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "uuid"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-uuid/tree/v1.23.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-02-19T12:13:01+00:00"
+        },
+        {
             "name": "symfony/property-access",
             "version": "v5.3.8",
             "source": {
@@ -8052,6 +8131,79 @@
             "time": "2021-10-28T13:28:41+00:00"
         },
         {
+            "name": "symfony/uid",
+            "version": "v5.3.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/uid.git",
+                "reference": "183336998e6b28c37ebf04ee18e6359dfb22084d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/uid/zipball/183336998e6b28c37ebf04ee18e6359dfb22084d",
+                "reference": "183336998e6b28c37ebf04ee18e6359dfb22084d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/polyfill-uuid": "^1.15"
+            },
+            "require-dev": {
+                "symfony/console": "^4.4|^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Uid\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Grégoire Pineau",
+                    "email": "lyrixx@lyrixx.info"
+                },
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides an object-oriented API to generate and represent UIDs",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "UID",
+                "uuid"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/uid/tree/v5.3.10"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-10-15T16:00:52+00:00"
+        },
+        {
             "name": "symfony/validator",
             "version": "v5.3.12",
             "source": {
@@ -9314,16 +9466,16 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.14.0",
+            "version": "v1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e"
+                "reference": "bbcd7380b0ebf3961ee21409db7b38bc31d69a13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e",
-                "reference": "d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/bbcd7380b0ebf3961ee21409db7b38bc31d69a13",
+                "reference": "bbcd7380b0ebf3961ee21409db7b38bc31d69a13",
                 "shasum": ""
             },
             "require": {
@@ -9375,22 +9527,22 @@
             ],
             "support": {
                 "issues": "https://github.com/phpspec/prophecy/issues",
-                "source": "https://github.com/phpspec/prophecy/tree/1.14.0"
+                "source": "https://github.com/phpspec/prophecy/tree/v1.15.0"
             },
-            "time": "2021-09-10T09:02:12+00:00"
+            "time": "2021-12-08T12:19:24+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "9.2.9",
+            "version": "9.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "f301eb1453c9e7a1bc912ee8b0ea9db22c60223b"
+                "reference": "d5850aaf931743067f4bfc1ae4cbd06468400687"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/f301eb1453c9e7a1bc912ee8b0ea9db22c60223b",
-                "reference": "f301eb1453c9e7a1bc912ee8b0ea9db22c60223b",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/d5850aaf931743067f4bfc1ae4cbd06468400687",
+                "reference": "d5850aaf931743067f4bfc1ae4cbd06468400687",
                 "shasum": ""
             },
             "require": {
@@ -9446,7 +9598,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.9"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.10"
             },
             "funding": [
                 {
@@ -9454,7 +9606,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-11-19T15:21:02+00:00"
+            "time": "2021-12-05T09:12:13+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -9699,16 +9851,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.5.10",
+            "version": "9.5.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "c814a05837f2edb0d1471d6e3f4ab3501ca3899a"
+                "reference": "2406855036db1102126125537adb1406f7242fdd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c814a05837f2edb0d1471d6e3f4ab3501ca3899a",
-                "reference": "c814a05837f2edb0d1471d6e3f4ab3501ca3899a",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2406855036db1102126125537adb1406f7242fdd",
+                "reference": "2406855036db1102126125537adb1406f7242fdd",
                 "shasum": ""
             },
             "require": {
@@ -9786,11 +9938,11 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.10"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.11"
             },
             "funding": [
                 {
-                    "url": "https://phpunit.de/donate.html",
+                    "url": "https://phpunit.de/sponsors.html",
                     "type": "custom"
                 },
                 {
@@ -9798,7 +9950,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-09-25T07:38:51+00:00"
+            "time": "2021-12-25T07:07:57+00:00"
         },
         {
             "name": "sebastian/cli-parser",
