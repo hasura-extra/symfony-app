@@ -17,8 +17,11 @@ class Country extends \Spawnia\Sailor\ObjectLike
      * @param string|null $capital
      * @param string|null $currency
      */
-    public static function make($name, $capital = 1.7976931348623157E+308, $currency = 1.7976931348623157E+308): self
-    {
+    public static function make(
+        $name,
+        $capital = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $currency = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.'
+    ): self {
         $instance = new self;
 
         if ($name !== self::UNDEFINED) {
@@ -45,5 +48,10 @@ class Country extends \Spawnia\Sailor\ObjectLike
             'capital' => new \Spawnia\Sailor\Convert\NullConverter(new \Spawnia\Sailor\Convert\StringConverter),
             'currency' => new \Spawnia\Sailor\Convert\NullConverter(new \Spawnia\Sailor\Convert\StringConverter),
         ];
+    }
+
+    public static function endpoint(): string
+    {
+        return 'hasura';
     }
 }

@@ -19,10 +19,10 @@ class user_insert_input extends \Spawnia\Sailor\ObjectLike
      * @param string|null $password
      */
     public static function make(
-        $email = 1.7976931348623157E+308,
-        $id = 1.7976931348623157E+308,
-        $name = 1.7976931348623157E+308,
-        $password = 1.7976931348623157E+308
+        $email = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $id = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $name = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $password = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.'
     ): self {
         $instance = new self;
 
@@ -52,5 +52,10 @@ class user_insert_input extends \Spawnia\Sailor\ObjectLike
             'name' => new \Spawnia\Sailor\Convert\NullConverter(new \Spawnia\Sailor\Convert\StringConverter),
             'password' => new \Spawnia\Sailor\Convert\NullConverter(new \Spawnia\Sailor\Convert\StringConverter),
         ];
+    }
+
+    public static function endpoint(): string
+    {
+        return 'hasura';
     }
 }

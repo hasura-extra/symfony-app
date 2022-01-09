@@ -12,7 +12,7 @@ class LanguageFilterInput extends \Spawnia\Sailor\ObjectLike
     /**
      * @param \App\GraphQLExecutor\Types\StringQueryOperatorInput|null $code
      */
-    public static function make($code = 1.7976931348623157E+308): self
+    public static function make($code = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.'): self
     {
         $instance = new self;
 
@@ -30,5 +30,10 @@ class LanguageFilterInput extends \Spawnia\Sailor\ObjectLike
         return $converters ??= [
             'code' => new \Spawnia\Sailor\Convert\NullConverter(new \App\GraphQLExecutor\Types\StringQueryOperatorInput),
         ];
+    }
+
+    public static function endpoint(): string
+    {
+        return 'hasura';
     }
 }

@@ -31,4 +31,9 @@ class user_pk_columns_input extends \Spawnia\Sailor\ObjectLike
             'id' => new \Spawnia\Sailor\Convert\NonNullConverter(new \Spawnia\Sailor\Convert\IntConverter),
         ];
     }
+
+    public static function endpoint(): string
+    {
+        return 'hasura';
+    }
 }

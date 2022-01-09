@@ -23,12 +23,12 @@ class StringQueryOperatorInput extends \Spawnia\Sailor\ObjectLike
      * @param string|null $regex
      */
     public static function make(
-        $eq = 1.7976931348623157E+308,
-        $glob = 1.7976931348623157E+308,
-        $in = 1.7976931348623157E+308,
-        $ne = 1.7976931348623157E+308,
-        $nin = 1.7976931348623157E+308,
-        $regex = 1.7976931348623157E+308
+        $eq = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $glob = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $in = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $ne = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $nin = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $regex = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.'
     ): self {
         $instance = new self;
 
@@ -66,5 +66,10 @@ class StringQueryOperatorInput extends \Spawnia\Sailor\ObjectLike
             'nin' => new \Spawnia\Sailor\Convert\NullConverter(new \Spawnia\Sailor\Convert\ListConverter(new \Spawnia\Sailor\Convert\NullConverter(new \Spawnia\Sailor\Convert\StringConverter))),
             'regex' => new \Spawnia\Sailor\Convert\NullConverter(new \Spawnia\Sailor\Convert\StringConverter),
         ];
+    }
+
+    public static function endpoint(): string
+    {
+        return 'hasura';
     }
 }

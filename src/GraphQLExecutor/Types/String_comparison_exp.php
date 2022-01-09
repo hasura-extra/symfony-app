@@ -49,25 +49,25 @@ class String_comparison_exp extends \Spawnia\Sailor\ObjectLike
      * @param string|null $_similar
      */
     public static function make(
-        $_eq = 1.7976931348623157E+308,
-        $_gt = 1.7976931348623157E+308,
-        $_gte = 1.7976931348623157E+308,
-        $_ilike = 1.7976931348623157E+308,
-        $_in = 1.7976931348623157E+308,
-        $_iregex = 1.7976931348623157E+308,
-        $_is_null = 1.7976931348623157E+308,
-        $_like = 1.7976931348623157E+308,
-        $_lt = 1.7976931348623157E+308,
-        $_lte = 1.7976931348623157E+308,
-        $_neq = 1.7976931348623157E+308,
-        $_nilike = 1.7976931348623157E+308,
-        $_nin = 1.7976931348623157E+308,
-        $_niregex = 1.7976931348623157E+308,
-        $_nlike = 1.7976931348623157E+308,
-        $_nregex = 1.7976931348623157E+308,
-        $_nsimilar = 1.7976931348623157E+308,
-        $_regex = 1.7976931348623157E+308,
-        $_similar = 1.7976931348623157E+308
+        $_eq = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_gt = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_gte = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_ilike = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_in = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_iregex = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_is_null = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_like = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_lt = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_lte = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_neq = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_nilike = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_nin = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_niregex = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_nlike = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_nregex = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_nsimilar = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_regex = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_similar = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.'
     ): self {
         $instance = new self;
 
@@ -157,5 +157,10 @@ class String_comparison_exp extends \Spawnia\Sailor\ObjectLike
             '_regex' => new \Spawnia\Sailor\Convert\NullConverter(new \Spawnia\Sailor\Convert\StringConverter),
             '_similar' => new \Spawnia\Sailor\Convert\NullConverter(new \Spawnia\Sailor\Convert\StringConverter),
         ];
+    }
+
+    public static function endpoint(): string
+    {
+        return 'hasura';
     }
 }

@@ -25,13 +25,13 @@ class user_bool_exp extends \Spawnia\Sailor\ObjectLike
      * @param \App\GraphQLExecutor\Types\String_comparison_exp|null $password
      */
     public static function make(
-        $_and = 1.7976931348623157E+308,
-        $_not = 1.7976931348623157E+308,
-        $_or = 1.7976931348623157E+308,
-        $email = 1.7976931348623157E+308,
-        $id = 1.7976931348623157E+308,
-        $name = 1.7976931348623157E+308,
-        $password = 1.7976931348623157E+308
+        $_and = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_not = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_or = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $email = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $id = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $name = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $password = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.'
     ): self {
         $instance = new self;
 
@@ -73,5 +73,10 @@ class user_bool_exp extends \Spawnia\Sailor\ObjectLike
             'name' => new \Spawnia\Sailor\Convert\NullConverter(new \App\GraphQLExecutor\Types\String_comparison_exp),
             'password' => new \Spawnia\Sailor\Convert\NullConverter(new \App\GraphQLExecutor\Types\String_comparison_exp),
         ];
+    }
+
+    public static function endpoint(): string
+    {
+        return 'hasura';
     }
 }

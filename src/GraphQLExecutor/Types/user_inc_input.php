@@ -12,7 +12,7 @@ class user_inc_input extends \Spawnia\Sailor\ObjectLike
     /**
      * @param int|null $id
      */
-    public static function make($id = 1.7976931348623157E+308): self
+    public static function make($id = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.'): self
     {
         $instance = new self;
 
@@ -30,5 +30,10 @@ class user_inc_input extends \Spawnia\Sailor\ObjectLike
         return $converters ??= [
             'id' => new \Spawnia\Sailor\Convert\NullConverter(new \Spawnia\Sailor\Convert\IntConverter),
         ];
+    }
+
+    public static function endpoint(): string
+    {
+        return 'hasura';
     }
 }
