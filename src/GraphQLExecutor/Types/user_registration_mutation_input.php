@@ -43,4 +43,9 @@ class user_registration_mutation_input extends \Spawnia\Sailor\ObjectLike
             'password' => new \Spawnia\Sailor\Convert\NonNullConverter(new \Spawnia\Sailor\Convert\StringConverter),
         ];
     }
+
+    public static function endpoint(): string
+    {
+        return 'hasura';
+    }
 }

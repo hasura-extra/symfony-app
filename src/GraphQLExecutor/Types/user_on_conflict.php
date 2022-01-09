@@ -18,8 +18,8 @@ class user_on_conflict extends \Spawnia\Sailor\ObjectLike
      */
     public static function make(
         $constraint,
-        $update_columns = 1.7976931348623157E+308,
-        $where = 1.7976931348623157E+308
+        $update_columns = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $where = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.'
     ): self {
         $instance = new self;
 
@@ -45,5 +45,10 @@ class user_on_conflict extends \Spawnia\Sailor\ObjectLike
             'update_columns' => new \Spawnia\Sailor\Convert\NonNullConverter(new \Spawnia\Sailor\Convert\ListConverter(new \Spawnia\Sailor\Convert\NonNullConverter(new \Spawnia\Sailor\Convert\EnumConverter))),
             'where' => new \Spawnia\Sailor\Convert\NullConverter(new \App\GraphQLExecutor\Types\user_bool_exp),
         ];
+    }
+
+    public static function endpoint(): string
+    {
+        return 'hasura';
     }
 }

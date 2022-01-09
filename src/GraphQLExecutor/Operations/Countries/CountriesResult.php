@@ -8,6 +8,11 @@ class CountriesResult extends \Spawnia\Sailor\Result
 {
     public ?Countries $data = null;
 
+    public static function endpoint(): string
+    {
+        return 'hasura';
+    }
+
     protected function setData(\stdClass $data): void
     {
         $this->data = Countries::fromStdClass($data);

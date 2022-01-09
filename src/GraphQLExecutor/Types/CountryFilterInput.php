@@ -17,9 +17,9 @@ class CountryFilterInput extends \Spawnia\Sailor\ObjectLike
      * @param \App\GraphQLExecutor\Types\StringQueryOperatorInput|null $currency
      */
     public static function make(
-        $code = 1.7976931348623157E+308,
-        $continent = 1.7976931348623157E+308,
-        $currency = 1.7976931348623157E+308
+        $code = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $continent = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $currency = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.'
     ): self {
         $instance = new self;
 
@@ -45,5 +45,10 @@ class CountryFilterInput extends \Spawnia\Sailor\ObjectLike
             'continent' => new \Spawnia\Sailor\Convert\NullConverter(new \App\GraphQLExecutor\Types\StringQueryOperatorInput),
             'currency' => new \Spawnia\Sailor\Convert\NullConverter(new \App\GraphQLExecutor\Types\StringQueryOperatorInput),
         ];
+    }
+
+    public static function endpoint(): string
+    {
+        return 'hasura';
     }
 }

@@ -202,11 +202,25 @@ class TypeConverters
         return $converter ??= new \Hasura\SailorBridge\Convert\DateTypeConverter();
     }
 
+    public static function time(): \Hasura\SailorBridge\Convert\TimeTypeConverter
+    {
+        static $converter;
+
+        return $converter ??= new \Hasura\SailorBridge\Convert\TimeTypeConverter();
+    }
+
     public static function timetz(): \Hasura\SailorBridge\Convert\TimetzTypeConverter
     {
         static $converter;
 
         return $converter ??= new \Hasura\SailorBridge\Convert\TimetzTypeConverter();
+    }
+
+    public static function timestamp(): \Hasura\SailorBridge\Convert\TimestampTypeConverter
+    {
+        static $converter;
+
+        return $converter ??= new \Hasura\SailorBridge\Convert\TimestampTypeConverter();
     }
 
     public static function timestamptz(): \Hasura\SailorBridge\Convert\TimestamptzTypeConverter

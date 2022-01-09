@@ -29,15 +29,15 @@ class Int_comparison_exp extends \Spawnia\Sailor\ObjectLike
      * @param array<int, int>|null $_nin
      */
     public static function make(
-        $_eq = 1.7976931348623157E+308,
-        $_gt = 1.7976931348623157E+308,
-        $_gte = 1.7976931348623157E+308,
-        $_in = 1.7976931348623157E+308,
-        $_is_null = 1.7976931348623157E+308,
-        $_lt = 1.7976931348623157E+308,
-        $_lte = 1.7976931348623157E+308,
-        $_neq = 1.7976931348623157E+308,
-        $_nin = 1.7976931348623157E+308
+        $_eq = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_gt = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_gte = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_in = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_is_null = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_lt = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_lte = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_neq = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.',
+        $_nin = 'Special default value that allows Sailor to differentiate between explicitly passing null and not passing a value at all.'
     ): self {
         $instance = new self;
 
@@ -87,5 +87,10 @@ class Int_comparison_exp extends \Spawnia\Sailor\ObjectLike
             '_neq' => new \Spawnia\Sailor\Convert\NullConverter(new \Spawnia\Sailor\Convert\IntConverter),
             '_nin' => new \Spawnia\Sailor\Convert\NullConverter(new \Spawnia\Sailor\Convert\ListConverter(new \Spawnia\Sailor\Convert\NonNullConverter(new \Spawnia\Sailor\Convert\IntConverter))),
         ];
+    }
+
+    public static function endpoint(): string
+    {
+        return 'hasura';
     }
 }
