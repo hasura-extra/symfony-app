@@ -16,7 +16,7 @@ final class GetCountries extends Command
 
     protected static $defaultDescription = 'Get countries from external remote schema';
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         // Test execute countries codegen
         // Try to edit hasura/graphql/countries.graphql
