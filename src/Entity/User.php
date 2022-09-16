@@ -67,24 +67,14 @@ class User implements PasswordAuthenticatedUserInterface, UserInterface
         return $this;
     }
 
-    public function getRoles()
+    public function getRoles(): array
     {
         return [SystemRoles::ROLE_USER];
-    }
-
-    public function getSalt()
-    {
-        // TODO: Implement getSalt() method.
     }
 
     public function eraseCredentials()
     {
         // TODO: Implement eraseCredentials() method.
-    }
-
-    public function getUsername()
-    {
-        return $this->getUserIdentifier();
     }
 
     public function getUserIdentifier(): string
